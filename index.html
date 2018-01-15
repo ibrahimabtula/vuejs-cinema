@@ -14,10 +14,15 @@
 </head>
 <body>
 <div id="app">
-    <h1>Test</h1>
     <div id="title">
         <img src="/public/logo.png">
         <h1>Vue.js Cinema</h1>
+    </div>
+    <div id="overview">
+        <div class="main">
+            <movie-list v-bind:genre="genre" v-bind:time="time"></movie-list>
+            <movie-filter v-on:check-filter="checkFilter"></movie-filter>
+        </div>
     </div>
 </div>
 <script src="/dist/build.js"></script>
