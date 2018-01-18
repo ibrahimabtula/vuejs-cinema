@@ -13,22 +13,20 @@
     </style>
 </head>
 <body>
-<div id="app">
+<div id="app" v-cloak>
     <div id="title">
         <img src="/public/logo.png">
         <h1>Vue.js Cinema</h1>
     </div>
-    <div id="overview">
-        <div class="main">
-            <movie-list 
-                v-bind:genre="genre" 
-                v-bind:time="time"
-                v-bind:movies="movies"
-                :day="day">
-            </movie-list>
-            <movie-filter v-on:check-filter="checkFilter"></movie-filter>
-        </div>
-    </div>
+    <keep-alive>
+        <router-view
+            v-bind:genre="genre" 
+            v-bind:time="time"
+            v-bind:movies="movies"
+            :day="day">
+        </routes-view>  
+    </keep-alive>
+  
 </div>
 <script src="/dist/build.js"></script>
 </body>
